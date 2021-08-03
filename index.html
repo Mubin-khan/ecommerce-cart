@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online-shopping-cart</title>
+    <!-- css link  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-light">
+    <main>
+      <section class="container my-5 p-4">
+        <h1 class="pb-4">Cart (2 items)</h1>
+        <div class="row bg-white g-4">
+          <div class="col-lg-8 col-md-12 col-11 shadow p-3">
+            <div class="row mb-3">
+              <div class="col-4 d-flex justify-content-center">
+                <img
+                  class="cart-image rounded-3"
+                  src="images/shirt-1.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="col-8">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h2 class="pb-3 text-capitalize fw-semibold">
+                      blue zara shirt
+                    </h2>
+                    <p class="pb-2 text-uppercase fw-light">Shirt : blue</p>
+                    <p class="pb-2 text-uppercase fw-light">Color : blue</p>
+                    <p class="pb-3 text-uppercase fw-light">size : M</p>
+                  </div>
+                  <div>
+                    <ul class="pagination pagination-lg">
+                      <li class="page-item" aria-current="page">
+                        <button
+                          class="page-link"
+                          onclick="decrement('numberOfitem1','singleProductAmount1')"
+                        >
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </li>
+                      <li class="page-item item-width">
+                        <input
+                          type="text"
+                          id="numberOfitem1"
+                          value="0"
+                          class="page-link form-control"
+                        />
+                      </li>
+                      <li class="page-item">
+                        <button
+                          class="page-link"
+                          onclick="increment('numberOfitem1','singleProductAmount1')"
+                        >
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <p><i class="fas fa-trash-alt"></i> remove item</p>
+                  </div>
+                  <div class="col-4">
+                    <p><i class="fas fa-heart"></i> wish to buy</p>
+                  </div>
+                  <div class="col-4">
+                    <h4>$<span id="singleProductAmount1">0.00</span></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="row mt-3">
+              <div class="col-4 d-flex justify-content-center">
+                <img
+                  class="cart-image rounded-3"
+                  src="images/shirt-2.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="col-8">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h2 class="pb-3 text-capitalize fw-semibold">
+                      brawn zara shirt
+                    </h2>
+                    <p class="pb-2 text-uppercase fw-light">Shirt : blue</p>
+                    <p class="pb-2 text-uppercase fw-light">Color : blue</p>
+                    <p class="pb-3 text-uppercase fw-light">size : M</p>
+                  </div>
+                  <div>
+                    <ul class="pagination pagination-lg">
+                      <li class="page-item" aria-current="page">
+                        <button
+                          class="page-link"
+                          onclick="decrement('numberOfitem2','singleProductAmount2')"
+                        >
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </li>
+                      <li class="page-item item-width">
+                        <input
+                          type="text"
+                          id="numberOfitem2"
+                          class="page-link form-control"
+                          value="0"
+                        />
+                      </li>
+                      <li class="page-item">
+                        <button
+                          class="page-link"
+                          onclick="increment('numberOfitem2','singleProductAmount2',)"
+                        >
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <p><i class="fas fa-trash-alt"></i> remove item</p>
+                  </div>
+                  <div class="col-4">
+                    <p><i class="fas fa-heart"></i> wish to buy</p>
+                  </div>
+                  <div class="col-4">
+                    <h4>$<span id="singleProductAmount2">0.00</span></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-11 shadow">
+            <div class="row">
+              <!-- total amount section  -->
+              <div class="col-12 shadow p-3">
+                <h2 class="text-capitalize pb-5">the totall amount of</h2>
+                <div class="d-flex justify-content-between">
+                  <p>Product Amount</p>
+                  <p>$<span id="itemsAmount">0.00</span></p>
+                </div>
+                <div class="d-flex justify-content-between pb-2">
+                  <p>Shipping Charge</p>
+                  <p>$ <span id="shipCharge">50.0</span></p>
+                </div>
+                <hr />
+                <div class="d-flex justify-content-between pt-2">
+                  <p>Total amount (including vat)</p>
+                  <p>$ <span id="totalAmount">0.00</span></p>
+                </div>
+                <button onclick="checkprice()" class="btn btn-primary">
+                  Checkout
+                </button>
+              </div>
+              <!-- coupne section  -->
+              <div class="col-12 shadow p-3">
+                <div
+                  class="accordion accordion-flush"
+                  id="accordionFlushExample"
+                >
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseOne"
+                      >
+                        Enter Coupon for discount (optional)
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseOne"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="flush-headingOne"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body">
+                        <input id="coupneId" type="text" value="" />
+                        <br />
+                        <small id="message" class="mb-2"> coupne : mubin</small
+                        ><br />
+                        <button
+                          class="mt-3 btn btn-primary"
+                          onclick="discount()"
+                          type="submit"
+                        >
+                          Apply
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- deleviry date  -->
+              <div class="col-12 shadow p-3">
+                <h4 class="pb-4">Expected Deleviry Date</h4>
+                <p>5th August - 8th August</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- js link  -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- font awesome  -->
+    <script
+      src="https://kit.fontawesome.com/0a797231b2.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
